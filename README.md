@@ -33,7 +33,7 @@ Step 5: Repeat Step 4 until winner is found.
 
 I have been using Firefox recently as for some reason, Chrome seems to be adding an extra "(" when parsing the ABI code assignment in battleship.js.
 
-I have also been unable to implement any tests, I'm still working on this but keep getting various errors.
+I have also been unable to implement any tests, I'm still working on this but keep getting various errors. Current error is "ParserError: Expected primary expression.".
 
 ### Prerequisites
 

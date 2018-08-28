@@ -11,6 +11,6 @@ contract TestBattleship {
  
     battleship.registerPlayer("Joe");
 
-    Assert.equal(9, 0, “Value expected should be zero”);
+    Assert.equal(battleship.returnPlayers(), expected, “Strings should match”);
   }
 }
