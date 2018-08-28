@@ -23,11 +23,17 @@ Step 1: registerPlayer - "Chris"
 Step 2: registerPlayer - "Russ"
 Step 3: placeShip (6 times) - 
 0,0,"FRIGATE","Chris",0
+
 0,1,"SUBMARINE","Chris",0
+
 0,2,"DESTROYER","Chris",0
+
 0,0,"FRIGATE","Russ",0
+
 0,1,"SUBMARINE","Russ",0
+
 0,2,"DESTROYER","Russ",0
+
 Step 4: fireShot - 0,0
 Step 5: Repeat Step 4 until winner is found.
 
