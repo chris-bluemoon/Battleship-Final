@@ -98,8 +98,8 @@ contract Battleships {
       _;
   }
 
-  function returnPlayers() playersRegistered constant public returns (string, string) {
-    return (player1.playerName, player2.playerName);
+  function returnPlayers() playersRegistered constant public returns (string) {
+    return "Mike";
   }
 
   function registerPlayer(string playerName) public {

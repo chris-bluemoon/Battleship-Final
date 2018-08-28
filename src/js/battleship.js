@@ -9,17 +9,15 @@ if (typeof web3 !== 'undefined') {
 }
 web3.eth.defaultAccount = web3.eth.accounts[0];
 
-var BattleshipContract = web3.eth.contract(([{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"}],"name":"LogShotResult","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"}],"name":"LogPlaceLegality","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"uint256"},{"indexed":false,"name":"","type":"uint256"}],"name":"LogShipStartStop","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"}],"name":"LogAllShipsPlaced","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"uint256"},{"indexed":false,"name":"","type":"uint256"},{"indexed":false,"name":"","type":"uint256"}],"name":"LogShipPlaced","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"uint256"}],"name":"LogCurrentShip","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"}],"name":"LogShipSunk","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"}],"name":"LogGameWon","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"}],"name":"LogAllShipsSunk","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"uint8"}],"name":"LogCheckShipStatus","type":"event"},{"constant":true,"inputs":[],"name":"returnPlayers","outputs":[{"name":"","type":"string"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"playerName","type":"string"}],"name":"registerPlayer","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint8"},{"name":"y","type":"uint8"},{"name":"shipType","type":"string"},{"name":"playerName","type":"string"},{"name":"direction","type":"uint8"}],"name":"placeShip","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"playerName_","type":"string"}],"name":"checkIfWon","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint8"},{"name":"y","type":"uint8"}],"name":"fireShot","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"clearGame","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"playerName_","type":"string"}],"name":"returnBoard","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"a","type":"string"},{"name":"b","type":"string"}],"name":"compareStrings","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"}]);
+var BattleshipContract = web3.eth.contract([{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"}],"name":"LogShotResult","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"}],"name":"LogPlaceLegality","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"uint256"},{"indexed":false,"name":"","type":"uint256"}],"name":"LogShipStartStop","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"}],"name":"LogAllShipsPlaced","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"uint256"},{"indexed":false,"name":"","type":"uint256"},{"indexed":false,"name":"","type":"uint256"}],"name":"LogShipPlaced","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"uint256"}],"name":"LogCurrentShip","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"}],"name":"LogShipSunk","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"}],"name":"LogGameWon","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"}],"name":"LogAllShipsSunk","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"string"},{"indexed":false,"name":"","type":"uint8"}],"name":"LogCheckShipStatus","type":"event"},{"constant":true,"inputs":[],"name":"returnPlayers","outputs":[{"name":"","type":"string"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"playerName","type":"string"}],"name":"registerPlayer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint8"},{"name":"y","type":"uint8"},{"name":"shipType","type":"string"},{"name":"playerName","type":"string"},{"name":"direction","type":"uint8"}],"name":"placeShip","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"x","type":"uint8"},{"name":"y","type":"uint8"}],"name":"fireShot","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"playerName_","type":"string"}],"name":"returnBoard","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"returnShipStatus","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"a","type":"string"},{"name":"b","type":"string"}],"name":"compareStrings","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"}]);
 
-var Battleship = BattleshipContract.at('0x211552b95d860053fdab021d3f106a041a3ffb0b');
+var Battleship = BattleshipContract.at('0x5676eb859d8194b66cf9de38a620ba4b68943f1d');
 console.log(Battleship);
 
-console.log("Calling registerPlayer");
 //Battleship.registerPlayer("Chris",function(error, result) {
 $("#registerButton").click(function() {
   Battleship.registerPlayer($("#registerInput").val(),function(error,transHash) {
     if (!error) {
-      $("#inst").html(transHash);
       console.log(transHash);
     } else {
       console.log(error);
@@ -27,25 +25,35 @@ $("#registerButton").click(function() {
   });
 });
 
-//Battleship.setPlayer();
-//  if (!error) {
-    //-- $("#inst").html(result);
- //   console.log("Registered player");
-//  } else {
- //   console.log("Didn't register players");
-//    console.log(error);
- // }
-//});
-//--
-
 $("#returnPlayersButton").click(function() {
 Battleship.returnPlayers(function(error, result) {
   if (!error) {
-    $("#playersName").html(result);
+    $("#playerName").html(result);
     console.log("Returned players");
+    console.log(result);
   } else {
     console.log("Didn't return players");
     console.log(error);
   }
 });
+});
+
+$("#placeButton").click(function() {
+  Battleship.placeShip($("#placeInput").val(),function(error,transHash) {
+    if (!error) {
+      console.log(transHash);
+    } else {
+      console.log(error);
+    }
+  });
+});
+
+$("#fireButton").click(function() {
+  Battleship.fireShot($("#fireInput").val(),function(error,transHash) {
+    if (!error) {
+      console.log(transHash);
+    } else {
+      console.log(error);
+    }
+  });
 });

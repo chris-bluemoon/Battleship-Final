@@ -17,10 +17,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
-  <script src="../node_modules/web3/dist/web3.min.js"></script>
-  <!-- <script src="web3.min.js"></script> -->
+  <!-- <script src="../node_modules/web3/dist/web3.min.js"></script> -->
+  <script src="web3.min.js"></script>
 
-  <title>Battleship</title>
+  <title>Battleship Game</title>
 </head>
 
 <body>
@@ -32,12 +32,7 @@
     <!-- battleship user inputs -->
     <textarea id="playerName">Player Name</textarea>
 
-    <form id="fireForm">
-      <div class="input-group">
-        <input type="text" id="guessInput" placeholder="A0" autofocus class="form-control">
-        <input type="button" id="fireButton" value="Fire!" class="btn btn-danger">
-      </div>
-    </form>
+
     <form id="registerForm">
       <div class="input-group">
         <input type="text" id="registerInput" placeholder="name" autofocus class="form-control">
@@ -48,6 +43,18 @@
       <div class="input-group">
         <input type="text" id="playersNames" placeholder="name" autofocus class="form-control">
         <input type="button" id="returnPlayersButton" value="returnPlayers" class="btn btn-primary">
+      </div>
+    </form>
+    <form id="placeForm">
+      <div class="input-group">
+        <input type="text" id="placeInput" placeholder="X,Y,ShipType,Name,Direction" autofocus class="form-control">
+        <input type="button" id="placeButton" value="Place" class="btn btn-primary">
+      </div>
+    </form>
+    <form id="fireForm">
+      <div class="input-group">
+        <input type="text" id="fireInput" placeholder="X,Y" autofocus class="form-control">
+        <input type="button" id="fireButton" value="Fire!" class="btn btn-danger">
       </div>
     </form>
 
