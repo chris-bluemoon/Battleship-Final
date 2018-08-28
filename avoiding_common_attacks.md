@@ -1,6 +1,6 @@
 1. Re-entrancy attack (ie when calling external functions)
 
-...
+Since no external contract calls are made, it was not necessary to protect against a recursive re-entrancy attack.
 
 2. Integer over/under flows
 
