@@ -7,6 +7,7 @@
   "dependencies": {
     "bootstrap": "^4.1.2",
     "node-modules": "^1.0.1",
+    "truffle": "^4.1.14",
     "web3": "github:ethereum/web3.js"
   }
 }

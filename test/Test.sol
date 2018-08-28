@@ -1,21 +1,16 @@
-import "truffle/Assert.sol";
+import "truffle/build/Assert.sol";
 import "truffle/DeployedAddresses.sol";
 import "../contracts/Battleship.sol";
 
-contract TestMetacoin {
-  function testInitialBalanceUsingDeployedContract() {
-    MetaCoin meta = MetaCoin(DeployedAddresses.MetaCoin());
+contract TestBattleship {
 
-    uint expected = 10000;
+  function testRegisterPlayer() {
+    Battleship battleship = new Battleship();
 
-    Assert.equal(meta.getBalance(tx.origin), expected, "Owner should have 10000 MetaCoin initially");
-  }
+    string memory expected = "Joe";
+ 
+    battleship.registerPlayer("Joe");
 
-  function testInitialBalanceWithNewMetaCoin() {
-    MetaCoin meta = new MetaCoin();
-
-    uint expected = 10000;
-
-    Assert.equal(meta.getBalance(tx.origin), expected, "Owner should have 10000 MetaCoin initially");
+    Assert.equal(9, 0, “Value expected should be zero”);
   }
 }
