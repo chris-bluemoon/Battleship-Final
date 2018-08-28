@@ -20,8 +20,11 @@ The actual game functionality does work and can be tested in Remix by making man
 Eg.
 
 Step 1: registerPlayer - "Chris"
+
 Step 2: registerPlayer - "Russ"
+
 Step 3: placeShip (6 times) - 
+
 0,0,"FRIGATE","Chris",0
 
 0,1,"SUBMARINE","Chris",0
@@ -35,6 +38,7 @@ Step 3: placeShip (6 times) -
 0,2,"DESTROYER","Russ",0
 
 Step 4: fireShot - 0,0
+
 Step 5: Repeat Step 4 until winner is found.
 
 I have been using Firefox recently as for some reason, Chrome seems to be adding an extra "(" when parsing the ABI code assignment in battleship.js.
