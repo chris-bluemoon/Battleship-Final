@@ -1,10 +1,14 @@
 pragma solidity ^0.4.23;
 
-contract Battleships {
+contract Battleship {
 
   enum GameState {InPlay, PlacingShips, GameEnded}
 
   uint8 constant BOARDSIZE = 10;
+
+  bool private stopped = false;
+  address private owner;
+
  struct ship {
       string shipName;
       uint8 shipLength;
@@ -82,6 +86,16 @@ contract Battleships {
   event LogAllShipsSunk(string,string);
   event LogCheckShipStatus(string,string,uint8);
 
+  modifier isAdmin() {
+    if(msg.sender != owner) {
+        throw;
+    }
+    _;
+  }
+
+  modifier stopInEmergency { if (!stopped) _; }
+
+  modifier onlyInEmergency { if (stopped) _; }
 
   modifier isGameInPlay {
     require(gameState == GameState.InPlay);
@@ -98,8 +112,13 @@ contract Battleships {
       _;
   }
 
-  function returnPlayers() playersRegistered constant public returns (string) {
-    return "Mike";
+  function returnPlayers() constant public returns (string,string) {
+    return (player1.playerName, player2.playerName);
+  }
+
+  function toggleContractActive() isAdmin public
+  {
+    stopped = !stopped;
   }
 
   function registerPlayer(string playerName) public {
@@ -166,7 +185,6 @@ contract Battleships {
                 currentShip.shipStatus = SHIP_PLACED;
               }
             }
-
 
       bool allShipsPlaced = true;
       for (i=0; i<player1.ships.length; i++) {
@@ -278,19 +296,6 @@ contract Battleships {
               return shotResult;
           }
       }
-  }
-
-  function returnBoard(string playerName_) public constant returns (uint) {
-      for (uint8 i=0; i<BOARDSIZE; i++) {
-          if ( compareStrings(playerName_,player1.playerName)) {
-              return player1.boardMatrix[9][9];
-          }
-      }
-  }
-
-  function returnShipStatus() returns (uint) {
-      return player1.ships[0].shipStatus;
-
   }
 
   function compareStrings (string a, string b) view returns (bool) {
