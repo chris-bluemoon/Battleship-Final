@@ -1,0 +1,12 @@
+{
+  "name": "battleships",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.2",
+    "node-modules": "^1.0.1",
+    "web3": "github:ethereum/web3.js"
+  }
+}
